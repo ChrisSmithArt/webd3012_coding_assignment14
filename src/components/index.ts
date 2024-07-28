@@ -4,3 +4,5 @@ export { default as Radio } from "./Radio";
 export { default as Dropdown } from "./Dropdown";
 export { default as Text } from "./Text";
 export { default as Label } from "./Label";
+export { default as Header } from "./Header";
+export { default as Img } from "./Img";

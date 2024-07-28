@@ -7,7 +7,6 @@ import Work from "./components/Work";
 import Resources from "./components/Resources";
 import Skills from "./components/Skills";
 
-
 export default function App() {
   return (
     <main>

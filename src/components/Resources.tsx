@@ -1,20 +1,47 @@
 import React from "react";
 import Button from "./Button/Button";
-import Card from "./Card/Card";
-import Radio from "./Radio/Radio";
-import Dropdown from "./Dropdown/Dropdown";
 import Text from "./Text/Text";
 import Label from "./Label/Label";
+import Header from "./Header/Header";
+import Img from "./Img/Img";
 
 export default function Resources() {
   return (
     <div>
-        <Label title="Resources"></Label>
-        <Label title="Resource Title"></Label>
-        <div>Image/Icon</div>
-        <Text content="Summary"></Text>
-        <Text content="Link"></Text>
+      <Header title="Resources"></Header>
+      <div class="flex">
+        <div>
+          <Img src="/images/VSCode.png" width="256px"></Img>
+        </div>
+        <div>
+          <Label title="Visual Studio Code"></Label>
+          <Text content="Visual Studio Code, also commonly referred to as VS Code, is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded version control with Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add functionality."></Text>
+          <Text content="In the Stack Overflow 2023 Developer Survey, Visual Studio Code was ranked the most popular developer environment tool among 86,544 respondents, with 73.71% reporting that they use it."></Text>
+          <Button title="Link"></Button>
+        </div>
+      </div>
+      <div class="flex">
+        <div>
+          <Img src="/images/Github.png" width="256px"></Img>
+        </div>
+        <div>
+          <Label title="Github"></Label>
+          <Text content="GitHub is a developer platform that allows developers to create, store, manage and share their code. It uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project. Headquartered in California, it has been a subsidiary of Microsoft since 2018."></Text>
+          <Text content="It is commonly used to host open source software development projects.[8] As of January 2023, GitHub reported having over 100 million developers and more than 420 million repositories, including at least 28 million public repositories. It is the world's largest source code host as of June 2023."></Text>
+          <Button title="Link"></Button>
+        </div>
+      </div>
+      <div class="flex">
+        <div>
+          <Img src="/images/Git.png" width="256px"></Img>
+        </div>
+        <div>
+          <Label title="Git"></Label>
+          <Text content="Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency."></Text>
+          <Text content="Git is easy to learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows."></Text>
+          <Button title="Link"></Button>
+        </div>
+      </div>
     </div>
   );
 }
-
