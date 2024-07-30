@@ -136,6 +136,33 @@ The components added were the following
    - Text.types.ts
      > This file contains all the information regarding the variable for our text components.
 
+
+# FINAL SITE CONSTRUCTION
+
+The final site is a portfolio website constructed out of the components made within the component library, this is to create a DRY workflow and increase testability through modular application construction.
+
+The portfolio consists of 1 page containing the following
+  - Basic Information
+    > Some basic information about myself
+  - Work
+    > List of past work; Websites/Applications
+    > Description of each piece of work
+    > Link to the website where the work is hosted
+  - Skills
+    > Languages/Frameworks
+    > Tools
+    > Methodologies
+    > Game Engines
+    > Design/Graphics Tools
+  - Resources
+    > List of Resources
+    > Description of each resource
+    > Link to the resource's webpage 
+  - Developer Setup
+    > VsCode Setup
+    > Terminal Setup
+    > Preferred Editor Font
+
 # REQUIREMENTS
 
 The proper way to run this project requires Docker Desktop, make sure that both Docker and Docker Desktop is installed.
@@ -178,46 +205,39 @@ npm run storybook
 
 # DOCKERFILE
 
-FROM node:18-alpine
+FROM node:20-alpine as build
+> Grabbing Node20 and setting it to the variable 'build'
 
-> grabbing node:18
+WORKDIR /smith_chris_final_site
+> Setting the working directory to smith_chris_final_site
 
-WORKDIR /smith_chris_ui_garden_build_checks
+COPY . /smith_chris_final_site
+> Copying that working directory
 
-> setting the work directory: smith_chris_ui_garden
-
-ENV PATH /smith_chris_ui_garden_build_checks/node_modules/.bin:$PATH
-
-> declaring the environment path
-
-ENV HOST=0.0.0.0
-ENV PORT=8018
-
-> setting the host and environment port.
-
-COPY package.json ./
-
-> copying package.json
-
-COPY package-lock.json ./
-
-> copying the package-lock.json
-
-RUN npm install --silent
-
+RUN npm install  --silent
 > installing npm packages silently(so that it doesn't show up in the terminal)
 
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm run build
+> Building the application
 
-> installing the react scripts silently (so that it doesn't show up in the terminal)
+FROM ubuntu
+> Grabbing ubuntu
 
-COPY . ./
+RUN apt-get update
+> Updating ubuntu
 
-> Copying everything in the current directory of 'smith_chris_ui_garden_build_checks'
+RUN apt-get install nginx -y
+> Getting nginx
 
-CMD ["npm", "run", "storybook"]
+COPY --from=build /smith_chris_final_site/dist /var/www/html/
+> copying our working directory and node20 into the ubuntu platform
 
-> running Storybook
+EXPOSE 5575
+> exposing port 5575 to host on.
+
+CMD ["nginx","-g","daemon off;"]
+> This tells Nginx to stay in the foreground. For containers this is useful as best practice is for one container = one process. 
+> One server (container) has only one service.
 
 # BUILD
 
