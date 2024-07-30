@@ -1,11 +1,9 @@
 import React from "react";
-import Button from "./Button/Button";
 import Text from "./Text/Text";
 import Label from "./Label/Label";
 import Header from "./Header/Header";
 import Img from "./Img/Img";
 import Link from "./Link/Link";
-
 
 export default function Resources() {
   return (
