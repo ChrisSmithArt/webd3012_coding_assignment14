@@ -6,3 +6,5 @@ export { default as Text } from "./Text";
 export { default as Label } from "./Label";
 export { default as Header } from "./Header";
 export { default as Img } from "./Img";
+export { default as Link } from "./Link";
+

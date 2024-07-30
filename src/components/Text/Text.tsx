@@ -8,7 +8,7 @@ const StyledText = styled.div<Partial<TextProps>>`
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   font-size: 1em;
   margin: auto;
-  padding: 0.25em 1em;
+  padding: 1em;
   opacity: ${(props) => (props.disabled ? "0.5" : "1.0")};
 `;
 

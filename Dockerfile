@@ -1,19 +1,14 @@
-FROM node:18-alpine
+FROM node:20-alpine as build
 
-WORKDIR /smith_chris_ui_garden_build_checks
+WORKDIR /smith_chris_final_site
+COPY . /smith_chris_final_site
 
-ENV PATH /smith_chris_ui_garden_build_checks/node_modules/.bin:$PATH
+RUN npm install  --silent
+RUN npm run build
 
-ENV HOST=0.0.0.0
-ENV PORT=8018
-
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
-
-COPY . ./
-
-EXPOSE 8018
-
-CMD ["npm", "run", "storybook"]
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install nginx -y
+COPY --from=build /smith_chris_final_site/dist /var/www/html/
+EXPOSE 5575
+CMD ["nginx","-g","daemon off;"]

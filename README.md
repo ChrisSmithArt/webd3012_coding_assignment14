@@ -224,7 +224,9 @@ CMD ["npm", "run", "storybook"]
 This will build the docker image, so that we can mount it into a container.
 
 ```
-docker build -t csmith11:1.0 .
+docker build . -t "csmith11-coding-assignment14:v1.0"
+
+
 ```
 
 # RUN
@@ -234,9 +236,10 @@ This command will mount the docker image from the Build step into a container.
 This will keep the application encapsulated within a Container, where we don't need to worry about conflicts.
 
 ```
-docker run -dp 8018:6006 --name smith_chris_ui_garden_build_checks csmith11:1.0
+docker run -dp 5575:80 --name smith_chris_coding_assignment14 csmith11-coding-assignment14:v1.0
+
 ```
 
 # ACCESS
 
-The application will be accessible at `http://localhost:8018`
+The application will be accessible at `http://localhost:5575`
