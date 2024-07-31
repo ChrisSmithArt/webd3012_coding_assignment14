@@ -172,7 +172,7 @@ The proper way to run this project requires Docker Desktop, make sure that both 
 Clone the repository
 
 ```
-git clone https://github.com/ChrisSmithArt/webd3012_coding_assignment12.git
+git clone https://github.com/ChrisSmithArt/webd3012_coding_assignment14.git
 ```
 
 # NAVIGATION
@@ -180,7 +180,7 @@ git clone https://github.com/ChrisSmithArt/webd3012_coding_assignment12.git
 Navigate to the cloned folder
 
 ```
-cd webd3012_coding_assignment12
+cd webd3012_coding_assignment14
 ```
 
 # TESTING
