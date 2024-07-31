@@ -1,7 +1,7 @@
 import React from "react";
 
-import Text from "./Text/Text";
-import Header from "./Header/Header";
+import Text from "../components/Text/Text";
+import Header from "../components/Header/Header";
 
 export default function BasicInfo() {
   return (

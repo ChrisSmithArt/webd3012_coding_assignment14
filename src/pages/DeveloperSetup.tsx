@@ -1,7 +1,7 @@
 import React from "react";
-import Text from "./Text/Text";
-import Label from "./Label/Label";
-import Header from "./Header/Header";
+import Text from "../components/Text/Text";
+import Label from "../components/Label/Label";
+import Header from "../components/Header/Header";
 
 export default function DevSetup() {
   return (

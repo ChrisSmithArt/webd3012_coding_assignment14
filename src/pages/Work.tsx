@@ -1,9 +1,9 @@
 import React from "react";
-import Text from "./Text/Text";
-import Label from "./Label/Label";
-import Header from "./Header/Header";
-import Img from "./Img/Img";
-import Link from "./Link/Link";
+import Text from "../components/Text/Text";
+import Label from "../components/Label/Label";
+import Header from "../components/Header/Header";
+import Img from "../components/Img/Img";
+import Link from "../components/Link/Link";
 
 export default function Work() {
   return (
